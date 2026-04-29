@@ -1,0 +1,239 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: 'Inter', system-ui, sans-serif;
+  color: #eaf7ff;
+  background: #050914;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at top left, rgba(7, 190, 255, 0.18), transparent 25%),
+    radial-gradient(circle at bottom right, rgba(0, 241, 135, 0.12), transparent 22%),
+    #020612;
+}
+
+#root {
+  padding: 24px;
+}
+
+.app-shell {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  gap: 24px;
+}
+
+.hero-panel,
+.table-panel {
+  background: rgba(10, 18, 34, 0.92);
+  border: 1px solid rgba(62, 177, 255, 0.16);
+  border-radius: 24px;
+  padding: 28px;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.22);
+}
+
+.header-block h1 {
+  margin: 8px 0 0;
+  font-size: clamp(2.5rem, 4vw, 4.6rem);
+  letter-spacing: -0.05em;
+}
+
+.subtitle {
+  margin: 0;
+  color: #6fe5ff;
+  text-transform: uppercase;
+  letter-spacing: 0.32em;
+  font-size: 0.82rem;
+}
+
+.add-form {
+  margin-top: 32px;
+  display: grid;
+  gap: 18px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: minmax(220px, 1fr) minmax(220px, 1fr);
+  gap: 16px;
+}
+
+.add-form label {
+  display: grid;
+  gap: 10px;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: #8ee4ff;
+}
+
+.add-form input {
+  width: 100%;
+  padding: 16px 18px;
+  border-radius: 14px;
+  border: 1px solid rgba(85, 184, 255, 0.24);
+  background: rgba(7, 14, 24, 0.95);
+  color: #e8f8ff;
+  font-size: 1rem;
+}
+
+.add-form input:focus {
+  outline: none;
+  border-color: rgba(97, 230, 255, 0.5);
+  box-shadow: 0 0 0 3px rgba(35, 136, 255, 0.12);
+}
+
+.add-form button {
+  width: fit-content;
+  border: none;
+  border-radius: 14px;
+  padding: 14px 24px;
+  background: linear-gradient(180deg, #1f9dff, #06d8c2);
+  color: #04121c;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.add-form button:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+}
+
+.stats-grid {
+  margin-top: 32px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.stat-card {
+  background: rgba(8, 18, 33, 0.9);
+  border: 1px solid rgba(64, 235, 216, 0.14);
+  border-radius: 18px;
+  padding: 22px 24px;
+}
+
+.stat-label {
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  color: #7fdcff;
+  font-size: 0.78rem;
+}
+
+.stat-value {
+  margin: 10px 0 0;
+  font-size: clamp(2rem, 3vw, 3rem);
+  font-weight: 800;
+  color: #c7fff9;
+}
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+  color: #78e8ff;
+  text-transform: uppercase;
+  letter-spacing: 0.23em;
+  font-size: 0.82rem;
+}
+
+.student-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.student-table th,
+.student-table td {
+  padding: 18px 20px;
+  border-bottom: 1px solid rgba(88, 164, 255, 0.12);
+}
+
+.student-table th {
+  text-align: left;
+  font-size: 0.85rem;
+  color: rgba(193, 224, 255, 0.85);
+}
+
+.student-table td {
+  color: #d5eefb;
+  vertical-align: middle;
+}
+
+.row-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.row-actions input {
+  width: 90px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(95, 190, 255, 0.18);
+  background: rgba(8, 15, 25, 0.96);
+  color: #f2faff;
+}
+
+.row-actions button {
+  border: 1px solid rgba(48, 202, 167, 0.3);
+  background: rgba(8, 18, 30, 0.95);
+  color: #8ff3dc;
+  padding: 11px 18px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.row-actions button:hover {
+  background: rgba(14, 35, 52, 0.98);
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.82rem;
+}
+
+.status-pill.pass {
+  color: #b4ffd2;
+  background: rgba(40, 122, 67, 0.16);
+}
+
+.status-pill.fail {
+  color: #ffb3b3;
+  background: rgba(139, 26, 37, 0.16);
+}
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+@media (max-width: 900px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 680px) {
+  .student-table th,
+  .student-table td {
+    padding: 14px 12px;
+  }
+}
