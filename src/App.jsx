@@ -28,12 +28,18 @@ function App() {
     );
   };
 
-  const passedCount = students.filter((student) => student.score >= 40).length;
-  const averageScore = students.length
-    ? Math.round(
-        students.reduce((sum, student) => sum + student.score, 0) / students.length
-      )
-    : 0;
+  let passedCount = 0;
+  for (let i = 0; i < students.length; i++) {
+    if (students[i].score >= 40) {
+      passedCount++;
+    }
+  }
+
+  let totalScore = 0;
+  for (let i = 0; i < students.length; i++) {
+    totalScore += students[i].score;
+  }
+  const averageScore = students.length ? Math.round(totalScore / students.length) : 0;
 
   return (
     <div className="app-shell">

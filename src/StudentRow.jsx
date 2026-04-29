@@ -2,7 +2,12 @@ import { useState } from 'react';
 
 function StudentRow({ student, onSaveScore }) {
   const [draftScore, setDraftScore] = useState(student.score);
-  const passed = student.score >= 40;
+  let statusClass = 'fail';
+  let statusText = 'Fail';
+  if (student.score >= 40) {
+    statusClass = 'pass';
+    statusText = 'Pass';
+  }
 
   const handleSave = () => {
     const nextScore = Number(draftScore);
@@ -17,9 +22,9 @@ function StudentRow({ student, onSaveScore }) {
       <td>{student.name}</td>
       <td>{student.score}</td>
       <td>
-        <span className={`status-pill ${passed ? 'pass' : 'fail'}`}>
+        <span className={`status-pill ${statusClass}`}>
           <span className="status-dot" />
-          {passed ? 'Pass' : 'Fail'}
+          {statusText}
         </span>
       </td>
       <td>
